@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godwin Justin Silayo - Analytics Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <div class="profile-wrapper">
+                <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="Godwin Justin Silayo" class="profile-img" id="current-profile-img">
+            </div>
+            <h1>Godwin Silayo</h1>
+            <p class="tagline">Business Analytics | Data Insights | Problem Solver</p>
+        </div>
+        <nav>
+            <a href="#about">About</a> |
+            <a href="#projects">Analytics Projects</a> |
+            <a href="#experience">Experience</a> |
+            <a href="#skills">Skills</a> |
+            <a href="#certificates">Certifications</a> |
+            <a href="#contact">Contact</a> |
+            <a href="/resume" target="_blank">View Resume</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I’m a data-driven Business Analyst candidate pursuing a Master of Science in Business Analytics (STEM-Certified) at Simon Business School, University of Rochester (Expected Dec 2025). With a B.S. in Electrical and Computer Engineering and hands-on experience in Python, Tableau, and predictive analytics, I specialize in turning complex data into actionable insights. My goal is to optimize processes and drive business success through rigorous analysis and innovative solutions.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Analytics Projects</h2>
+        {% for project in projects %}
+        <div class="project-item">
+            <h3>{{ project.title }}</h3>
+            <p><em>{{ project.date }}</em></p>
+            <p>{{ project.description }}</p>
+            <p><strong>Tools:</strong> {{ project.tools }}</p>
+            <a href="{{ url_for('download_project', filename=project.file) }}" target="_blank" class="project-link">View Slides</a>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <details class="experience-item">
+            <summary>
+                <h3>Business Analyst Intern - Billionaire Club Co LLC</h3>
+                <p><em>Rochester, NY | Sep 2023 - Jul 2024</em></p>
+            </summary>
+            <div class="experience-content">
+                <p>Elicited requirements from cross-functional teams, translating business needs into technical specs, driving a 10% revenue increase. Enhanced sprint efficiency by 15% using Jira and Agile methodologies.</p>
+                <p><strong>Tools:</strong> Jira, Slack, Google Sheets</p>
+            </div>
+        </details>
+        <details class="experience-item">
+            <summary>
+                <h3>Python Developer & QA Engineer - Quantum Risk Analytics, Inc</h3>
+                <p><em>Rochester, NY | Nov 2023 - Feb 2024</em></p>
+            </summary>
+            <div class="experience-content">
+                <p>Developed automated testing frameworks in Python, boosting test coverage and cutting defect rates by 25%, improving software quality for risk analytics solutions.</p>
+                <p><strong>Tools:</strong> Python, Jupyter Notebook, GitHub</p>
+            </div>
+        </details>
+        <details class="experience-item">
+            <summary>
+                <h3>Due Diligence Analyst - Simon Venture Fund Club</h3>
+                <p><em>Rochester, NY | Oct 2024 - Present</em></p>
+            </summary>
+            <div class="experience-content">
+                <p>Analyzed startup financials and market trends in a team of 6, providing data-backed investment recommendations.</p>
+                <p><strong>Tools:</strong> Excel, Power BI</p>
+            </div>
+        </details>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Tools</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Python (Analytics, Data Wrangling)</div>
+            <div class="skill-item">Tableau & Power BI (Visualization)</div>
+            <div class="skill-item">SQL (Data Management)</div>
+            <div class="skill-item">Statistical Modeling</div>
+            <div class="skill-item">Machine Learning Basics</div>
+            <div class="skill-item">Jira & Agile Methodologies</div>
+            <div class="skill-item">Excel & Google Sheets</div>
+            <div class="skill-item">Requirements Gathering</div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h2>Certifications</h2>
+        {% for cert in certificates %}
+        <div class="certificate-item">
+            <h3>{{ cert.title }}</h3>
+            <p><em>{{ cert.issuer }} | {{ cert.date }}</em></p>
+            {% if cert.url %}
+                <a href="{{ cert.url }}" target="_blank" class="certificate-link">View Certificate</a>
+            {% elif cert.file %}
+                <a href="{{ url_for('view_certificate', filename=cert.file) }}" target="_blank" class="certificate-link">View Certificate</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:godwinsilayo100@gmail.com">godwinsilayo100@gmail.com</a> | Phone: (585) 329-4338</p>
+        <p>Interested in my analytics expertise? Let’s connect!</p>
+        <!-- <form action="/contact" method="POST" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        {% if messages %}
+            <h3>Messages Received:</h3>
+            <ul>
+                {% for msg in messages %}
+                    <li><strong>{{ msg.name }}</strong> ({{ msg.email }}): {{ msg.message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} -->
+    </section>
+
+    <footer>
+        <p>© 2025 Godwin Silayo | <a href="https://www.linkedin.com/in/godwinsilayo/" target="_blank">LinkedIn</a> | <a href="https://github.com/godwin15" target="_blank">GitHub</a></p>
+    </footer>
+</body>
+</html>
