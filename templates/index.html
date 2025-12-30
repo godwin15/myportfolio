@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Godwin Silayo</title>
+    <title>Godwin Silayo | Business Analyst</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
@@ -14,14 +14,14 @@
                 <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="Godwin Justin Silayo" class="profile-img" id="current-profile-img">
             </div>
             <h1>Godwin Silayo</h1>
-            <p class="tagline">Business Analytics | Data Insights | Problem Solver</p>
+            <p class="tagline">Business Analyst | Data Engineering | Workflow Automation</p>
         </div>
         <nav>
             <a href="#about">About</a> |
+            <a href="#education">Education</a> |
             <a href="#projects">Analytics Projects</a> |
             <a href="#experience">Experience</a> |
             <a href="#skills">Skills</a> |
-            <a href="#certificates">Certifications</a> |
             <a href="#contact">Contact</a> |
             <a href="/resume" target="_blank">View Resume</a>
         </nav>
@@ -30,53 +30,79 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            I’m a data-driven Business Analyst candidate pursuing a Master of Science in Business Analytics (STEM-Certified) at Simon Business School, University of Rochester (Expected Dec 2025). With a B.S. in Electrical and Computer Engineering and hands-on experience in Python, Tableau, and predictive analytics, I specialize in turning complex data into actionable insights. My goal is to optimize processes and drive business success through rigorous analysis and innovative solutions.
+            Business Analyst with a strong background in data engineering, statistical analysis, and workflow automation. 
+            I specialize in abstracting complex information into structured registries and translating technical data into executive-level insights to support decision-making.
         </p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>MS in Business Analytics (STEM-Certified)</h3>
+            <p><strong>Simon Business School, University of Rochester</strong> | Graduated Dec 2025</p>
+            <p>GPA: 3.72/4.0 | Merit Scholarship Recipient</p>
+            <p><em>Relevant Coursework:</em> Predictive and Causal Analytics, Machine Learning, Big Data (Hadoop, Hive), Data Management, Warehousing, and Visualization.</p>
+        </div>
+        <div class="education-item">
+            <h3>BS in Electrical and Computer Engineering</h3>
+            <p><strong>University of Rochester</strong> | Graduated May 2023</p>
+            <p><em>Relevant Coursework:</em> Data Structures and Algorithms, Object-Oriented Programming, Discrete Math, Computer Organization.</p>
+        </div>
     </section>
 
     <section id="projects">
         <h2>Analytics Projects</h2>
-        {% for project in projects %}
+        
         <div class="project-item">
-            <h3>{{ project.title }}</h3>
-            <p><em>{{ project.date }}</em></p>
-            <p>{{ project.description }}</p>
-            <p><strong>Tools:</strong> {{ project.tools }}</p>
-            <a href="{{ url_for('download_project', filename=project.file) }}" target="_blank" class="project-link">View Slides</a>
+            <h3>Capstone Project: Construction Procurement Optimization</h3>
+            <p><em>Aug 2025 - Dec 2025</em></p>
+            <p>Analyzed $33.4M in procurement data across 11,554 POs. Identified price variances up to 5,650% and projected $840K–$1.3M in annual savings through vendor consolidation.</p>
+            <p><strong>Tools:</strong> Python, Data Cleaning, Aggregation, Vendor Analysis.</p>
         </div>
-        {% endfor %}
+
+        <div class="project-item">
+            <h3>Machine Predictive Modeling & Dashboard</h3>
+            <p><em>Oct 2025 - Nov 2025</em></p>
+            <p>Built a logistic regression model and Streamlit dashboard that reduced potential losses by 15% through scenario-based risk detection.</p>
+            <p><strong>Tools:</strong> Python, Logistic Regression, Streamlit.</p>
+        </div>
+
+        <div class="project-item">
+            <h3>Customer Churn Analysis</h3>
+            <p><em>Mar 2025 - Apr 2025</em></p>
+            <p>Identified key churn drivers for telecom services using statistical testing and proposed pricing strategies to improve retention.</p>
+            <p><strong>Tools:</strong> Python, Statistical Testing.</p>
+        </div>
+
+        <div class="project-item">
+            <h3>ETL Warehouse & Visualization</h3>
+            <p><em>Jan 2025 - Mar 2025</em></p>
+            <p>Automated SQL ETL workflows to consolidate six disparate datasets, reducing data prep time and supporting unified reporting.</p>
+            <p><strong>Tools:</strong> SQL, ETL, Tableau.</p>
+        </div>
     </section>
 
     <section id="experience">
         <h2>Professional Experience</h2>
-        <details class="experience-item">
+        <details class="experience-item" open>
             <summary>
-                <h3>Business Analyst Intern - Billionaire Club Co LLC</h3>
-                <p><em>Rochester, NY | Sep 2023 - Jul 2024</em></p>
+                <h3>Python Developer - Billionaire Club Co LLC</h3>
+                <p><em>Sep 2023 - Jul 2024</em></p>
             </summary>
             <div class="experience-content">
-                <p>Elicited requirements from cross-functional teams, translating business needs into technical specs, driving a 10% revenue increase. Enhanced sprint efficiency by 15% using Jira and Agile methodologies.</p>
-                <p><strong>Tools:</strong> Jira, Slack, Google Sheets</p>
+                <p>Developed Django models integrated with PostgreSQL to improve user data management and reporting efficiency. Automated reporting processes, contributing to a 10% revenue increase.</p>
+                <p><strong>Tools:</strong> Python, Django, PostgreSQL.</p>
             </div>
         </details>
+        
         <details class="experience-item">
             <summary>
-                <h3>Python Developer & QA Engineer - Quantum Risk Analytics, Inc</h3>
-                <p><em>Rochester, NY | Nov 2023 - Feb 2024</em></p>
+                <h3>Python Developer & QA Engineer - Quantum Risk Analytics, Inc.</h3>
+                <p><em>Nov 2023 - Feb 2024</em></p>
             </summary>
             <div class="experience-content">
-                <p>Developed automated testing frameworks in Python, boosting test coverage and cutting defect rates by 25%, improving software quality for risk analytics solutions.</p>
-                <p><strong>Tools:</strong> Python, Jupyter Notebook, GitHub</p>
-            </div>
-        </details>
-        <details class="experience-item">
-            <summary>
-                <h3>Due Diligence Analyst - Simon Venture Fund Club</h3>
-                <p><em>Rochester, NY | Oct 2024 - Present</em></p>
-            </summary>
-            <div class="experience-content">
-                <p>Analyzed startup financials and market trends in a team of 6, providing data-backed investment recommendations.</p>
-                <p><strong>Tools:</strong> Excel, Power BI</p>
+                <p>Developed testing frameworks that reduced data defects in COVID-19 risk models by 25%. Built visualizations in Matplotlib to distill complex risk factors for executive reporting.</p>
+                <p><strong>Tools:</strong> Python, Matplotlib, QA Frameworks.</p>
             </div>
         </details>
     </section>
@@ -84,57 +110,31 @@
     <section id="skills">
         <h2>Skills & Tools</h2>
         <div class="skills-grid">
-            <div class="skill-item">Python (Analytics, Data Wrangling)</div>
-            <div class="skill-item">Tableau & Power BI (Visualization)</div>
-            <div class="skill-item">SQL (Data Management)</div>
-            <div class="skill-item">Statistical Modeling</div>
-            <div class="skill-item">Machine Learning Basics</div>
-            <div class="skill-item">Jira & Agile Methodologies</div>
-            <div class="skill-item">Excel & Google Sheets</div>
-            <div class="skill-item">Requirements Gathering</div>
+            <div class="skill-item">Python (Pandas, NumPy, Scikit-learn)</div>
+            <div class="skill-item">R & Statistical Analysis</div>
+            <div class="skill-item">SQL (MySQL, Hive, ETL Processes)</div>
+            
+            <div class="skill-item">Tableau, Power BI & Streamlit</div>
+            <div class="skill-item">Interactive Dashboard Development</div>
+            
+            <div class="skill-item">Excel (VBA, Power Query, Pivot Tables)</div>
+            <div class="skill-item">Big Data (Hadoop, Databricks)</div>
+            <div class="skill-item">Cloud & DevOps (AWS, GitHub, Jira)</div>
+            
+            <div class="skill-item">Machine Learning & Predictive Modeling</div>
+            <div class="skill-item">API Integration & Workflow Automation</div>
         </div>
-    </section>
-
-    <section id="certificates">
-        <h2>Certifications</h2>
-        {% for cert in certificates %}
-        <div class="certificate-item">
-            <h3>{{ cert.title }}</h3>
-            <p><em>{{ cert.issuer }} | {{ cert.date }}</em></p>
-            {% if cert.url %}
-                <a href="{{ cert.url }}" target="_blank" class="certificate-link">View Certificate</a>
-            {% elif cert.file %}
-                <a href="{{ url_for('view_certificate', filename=cert.file) }}" target="_blank" class="certificate-link">View Certificate</a>
-            {% endif %}
-        </div>
-        {% endfor %}
     </section>
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:godwinsilayo100@gmail.com">godwinsilayo100@gmail.com</a> | Phone: (585) 329-4338</p>
-        <p>Interested in my analytics expertise? Let’s connect!</p>
-        <!-- <form action="/contact" method="POST" class="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        {% if messages %}
-            <h3>Messages Received:</h3>
-            <ul>
-                {% for msg in messages %}
-                    <li><strong>{{ msg.name }}</strong> ({{ msg.email }}): {{ msg.message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %} -->
+        <p>Email: <a href="mailto:gsilayo_simon@simon.rochester.edu">gsilayo_simon@simon.rochester.edu</a></p>
+        <p>Phone: (585) 329-4338</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/godwinsilayo/" target="_blank">linkedin.com/in/godwinsilayo/</a></p>
     </section>
 
     <footer>
-        <p>© 2025 Godwin Silayo | <a href="https://www.linkedin.com/in/godwinsilayo/" target="_blank">LinkedIn</a> | <a href="https://github.com/godwin15" target="_blank">GitHub</a></p>
+        <p>© 2025 Godwin Silayo | <a href="https://github.com/godwin15" target="_blank">GitHub</a></p>
     </footer>
 </body>
 </html>

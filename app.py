@@ -32,7 +32,7 @@ def home():
 
 @app.route('/resume')
 def view_resume():
-    return send_file('static/resume.pdf', as_attachment=False)
+    return send_file('static/GodwinSilayo_Data.pdf', as_attachment=False)
 
 @app.route('/project/<filename>')
 def download_project(filename):
